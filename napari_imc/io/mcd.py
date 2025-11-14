@@ -49,10 +49,10 @@ class McdFileReader(FileReaderBase):
             if panorama.id == panorama_id
         )
         img = self._mcd_file.read_panorama(panorama)[::-1, ::-1]
-        rotation = np.arctan2(
+        rotation = -np.arctan2(
             panorama.points_um[1][1] - panorama.points_um[0][1],
             panorama.points_um[1][0] - panorama.points_um[0][0],
-        )
+        ) + np.pi
         dims = ImageDimensions(
             panorama.points_um[0][0],
             panorama.points_um[0][1] - panorama.height_um,
@@ -71,13 +71,13 @@ class McdFileReader(FileReaderBase):
             for acquisition in slide.acquisitions
             if acquisition.id == acquisition_id
         )
-        img = self._mcd_file.read_acquisition(acquisition)[
+        img = self._m_cd_file.read_acquisition(acquisition)[
             acquisition.channel_labels.index(channel_label), ::-1, ::-1
         ]
-        rotation = np.arctan2(
+        rotation = -np.arctan2(
             acquisition.roi_points_um[1][1] - acquisition.roi_points_um[0][1],
             acquisition.roi_points_um[1][0] - acquisition.roi_points_um[0][0],
-        )
+        ) + np.pi
         dims = ImageDimensions(
             acquisition.roi_points_um[0][0],
             acquisition.roi_points_um[0][1] - acquisition.height_um,
