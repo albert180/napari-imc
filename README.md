@@ -1,3 +1,14 @@
+# Fork of the awesome napari-imc from Jonas Windhager
+
+This fork just adds patches so that [napari-imc repository](https://github.com/BodenmillerGroup/napari-imc) runs with newer versions of Python, Napari and Qt, since the original plugin doesn't seem to be maintained anymore.
+
+Install with
+
+    pip install napari-imc
+
+
+
+The text below is unchanged from the original repository:
 # napari-imc
 
 [![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-imc)](https://napari-hub.org/plugins/napari-imc)
