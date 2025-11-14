@@ -4,7 +4,7 @@ This fork just adds patches so that [napari-imc repository](https://github.com/B
 
 Install with
 
-    pip install napari-imc
+    pip install git+https://github.com/albert180/napari-imc.git
 
 
 
