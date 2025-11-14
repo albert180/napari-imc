@@ -45,7 +45,7 @@ def _get_viewer() -> Optional[Viewer]:
 
 def _get_imc_widget(viewer: Viewer) -> IMCWidget:
     # TODO https://github.com/napari/napari/issues/2203
-    dock_widget = viewer.window._dock_widgets.get("Imaging Mass Cytometry")
+    dock_widget = viewer.window.dock_widgets.get("Imaging Mass Cytometry")
     if dock_widget is not None:
         imc_widget = dock_widget.widget()
     else:
